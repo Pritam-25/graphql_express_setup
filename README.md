@@ -147,6 +147,7 @@ http://localhost:4000/graphql
 
 ## Example Query
 
+Operation
 ```graphql
 query {
   users {
@@ -157,12 +158,32 @@ query {
 }
 ```
 
+Response
+```json
+{
+  "data": {
+    "users": [
+      {
+        "id": "3f167d7f-edfa-434d-9b5d-bd0105c3bf73",
+        "email": "atanu@gmail.com",
+        "name": "Atanu"
+      },
+      {
+        "id": "7d0a12c8-8be1-4cc8-a33b-dceaf4de48ed",
+        "email": "pritam@example.com",
+        "name": "Pritam Maity"
+      }
+    ]
+  }
+}
+```
 ---
 
 ## Example Mutation
 
-1. SignUp Mutation
+### 1. SignUp Mutation
 
+Operation
 ```graphql
 mutation SignupUser($input: SignupInput!) {
   signup(input: $input) {
@@ -174,8 +195,35 @@ mutation SignupUser($input: SignupInput!) {
 }
 ```
 
-2. Login Mutation
+Variables
+```json
+{
+  "input": {
+    "name": "Pritam Maity",
+    "email": "pritam@example.com",
+    "password": "StrongPass123",
+    "role": "USER"
+  }
+}
+```
 
+Response
+```json
+{
+  "data": {
+    "signup": {
+      "id": "7d0a12c8-8be1-4cc8-a33b-dceaf4de48ed",
+      "name": "Pritam Maity",
+      "email": "pritam@example.com",
+      "role": "USER"
+    }
+  }
+}
+```
+---
+### 2. Login Mutation
+
+Operation
 ```graphql
 mutation LoginUser($input: LoginInput!) {
   login(input: $input) {
@@ -183,6 +231,30 @@ mutation LoginUser($input: LoginInput!) {
     name
     email
     role
+  }
+}
+```
+
+Variables
+```json
+{
+  "input": {
+    "email": "pritam@example.com",
+    "password": "StrongPass123"
+  }
+}
+```
+
+Response
+```json
+{
+  "data": {
+    "login": {
+      "id": "641744fa-24df-4d13-abfa-b7e0bbce25c0",
+      "name": "Pritam Maity",
+      "email": "pritam@example.com",
+      "role": "USER"
+    }
   }
 }
 ```
