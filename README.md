@@ -46,7 +46,6 @@ src
 ├─ repositories
 │   └─ user.repository.ts
 │
-├─ services
 │
 ├─ middleware
 |   |─ auth.middleware.ts
