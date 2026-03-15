@@ -154,6 +154,7 @@ query {
     id
     email
     name
+    role
   }
 }
 ```
@@ -166,12 +167,14 @@ Response
       {
         "id": "3f167d7f-edfa-434d-9b5d-bd0105c3bf73",
         "email": "atanu@gmail.com",
-        "name": "Atanu"
+        "name": "Atanu",
+        "role": "USER"
       },
       {
         "id": "7d0a12c8-8be1-4cc8-a33b-dceaf4de48ed",
         "email": "pritam@example.com",
-        "name": "Pritam Maity"
+        "name": "Pritam Maity",
+        "role": "ADMIN"
       }
     ]
   }
