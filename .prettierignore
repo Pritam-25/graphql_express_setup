@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+coverage/
+
+# Logs
+logs/
+*.log
+
+# Environment files
+.env
+.env.*
+
+# Cache
+.cache/
+.eslintcache
+
+# Lock files (optional)
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Generated files
+*.min.js
+*.bundle.js
+
+# IDE / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# orm
+drizzle/

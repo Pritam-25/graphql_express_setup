@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ESNext",
+    "esModuleInterop": true,
+
+    "baseUrl": ".",
+
+    "paths": {
+      "@generated/*": ["src/generated/*"],
+      "@entities/*": ["src/entities/*"],
+      "@middleware/*": ["src/middleware/*"],
+      "@repositories/*": ["src/repositories/*"],
+      "@schemas/*": ["src/schemas/*"],
+      "@services/*": ["src/services/*"],
+      "@utils/*": ["src/utils/*"],
+      "@lib/*": ["src/lib/*"],
+      "@graphql/*": ["src/graphql/*"]
+    },
+
+    "strict": true,
+    "isolatedModules": true,
+
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    "sourceMap": true,
+    "declaration": true,
+
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*", "codegen.ts", "tsconfig.json"],
+  "exclude": ["node_modules", "dist"]
+}
