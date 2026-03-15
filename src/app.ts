@@ -11,7 +11,7 @@ import { prisma } from '@lib/prisma.js';
 import schema from '@graphql/schema.js';
 import createContext from '@graphql/context.js';
 import { authMiddleware } from '@middleware/index.js';
-import { env } from '@utils/env.js';
+import { env } from '@lib/env.js';
 
 const app: Application = express();
 

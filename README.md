@@ -30,7 +30,7 @@ The project demonstrates a clean backend architecture using GraphQL with modular
 
 ## Project Structure
 
-```
+```text
 src
 │
 ├─ entities
@@ -79,13 +79,13 @@ src
 
 Clone the repository:
 
-```
-git clone <repository-url>
+```bash
+git clone git@github.com:Pritam-25/graphql_express_setup.git
 ```
 
 Install dependencies:
 
-```
+```bash
 pnpm install
 ```
 
@@ -100,25 +100,31 @@ Example:
 ```
 PORT=4000
 NODE_ENV=development
-DATABASE_URL=your_postgress_database_url
+DATABASE_URL=your_postgres_database_url
 JWT_SECRET=your_secret_key
 CLIENT_ORIGIN=http://localhost:3000
 ```
 
 ---
 
-## Prisma Setup
+## Setup Steps
 
 Generate Prisma client:
 
-```
-npx prisma generate
+```bash
+pnpm prisma generate
 ```
 
 Run database migrations:
 
+```bash
+pnpm prisma migrate dev --name init_db_setup
 ```
-pnpm prisma migrate dev "init db setup"
+
+Generate GraphQL resolver types:
+
+```bash
+pnpm codegen
 ```
 
 ---
@@ -127,7 +133,7 @@ pnpm prisma migrate dev "init db setup"
 
 Start the development server:
 
-```
+```bash
 pnpm dev
 ```
 
@@ -141,7 +147,7 @@ http://localhost:4000/graphql
 
 ## Example Query
 
-```
+```graphql
 query {
   users {
     id
@@ -156,7 +162,8 @@ query {
 ## Example Mutation
 
 1. SignUp Mutation
-```
+
+```graphql
 mutation SignupUser($input: SignupInput!) {
   signup(input: $input) {
     id
@@ -167,8 +174,9 @@ mutation SignupUser($input: SignupInput!) {
 }
 ```
 
-2. Login Mution
-```
+2. Login Mutation
+
+```graphql
 mutation LoginUser($input: LoginInput!) {
   login(input: $input) {
     id
@@ -178,8 +186,9 @@ mutation LoginUser($input: LoginInput!) {
   }
 }
 ```
+
 ---
 
 ## License
 
-This project is for learning purposes.
+This project is for learning purpose.
